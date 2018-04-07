@@ -14,7 +14,7 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <div>
+      <div className="body-app">
         <Switch>
           {/* order of Route is important */}
           <Route path='/posts/new' component={PostsNew} />
