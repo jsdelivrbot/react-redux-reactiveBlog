@@ -26,7 +26,11 @@ class PostsNew extends Component {
   }
 
   onSubmit(values) {
-    this.props.createPost(values);
+    // use callback in this.props.createPost so that we navigate back to postsIndex when POST request is finished
+    this.props.createPost(values, () => {
+      // PROGRAMATIC NAVIGATION: this.props.history comes from <Route /> created in /src/index.js
+      this.props.history.push('/');
+    });
   }
 
   render() {
